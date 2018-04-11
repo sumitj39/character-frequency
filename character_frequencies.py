@@ -1,10 +1,14 @@
 #coding: UTF-8
+
+#refer to https://www.unicode.org/charts/PDF/U0C80.pdf for unicode Kannada character set
 import re
 from collections import Counter
 import operator
 othu = u"ಾಿೀುೂೃೄೆೇೈೊೋೌ್ಂಃ"
 
 def filter_kan_chars(text):
+    # \u0c80 to \u0cff is the kannada character limit.
+    #return only Kannada characters
     return ''.join(list(filter(lambda x:x>='\u0c80' and x<='\u0cff',list(text))))
 
 def count(cobj, txt):
